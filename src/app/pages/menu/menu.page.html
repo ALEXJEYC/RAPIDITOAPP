@@ -1,0 +1,66 @@
+
+<ion-menu side="start" contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+        <ion-button>
+          <ion-icon name="home-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      
+      <ion-item (click)="goToSettings()">
+        <ion-label>Configuración</ion-label> <ion-icon style="padding-right: 10px; color: rgb(147, 9, 160);" name="settings-outline"></ion-icon>
+      </ion-item>
+      <ion-item (click)="goToTravel()">
+        <ion-label>Viajes</ion-label> <ion-icon style="padding-right: 10px; color: rgb(147, 9, 160);" name="car-outline"></ion-icon>
+      </ion-item>
+      <ion-item (click)="goToHistory()">
+        <ion-label>Historial</ion-label> <ion-icon style="padding-right: 10px; color: rgb(147, 9, 160);" name="receipt-outline"></ion-icon>
+      </ion-item>
+      <ion-item (click)="goToProfile()" >
+        <ion-label>Perfil</ion-label> <ion-icon style="padding-right: 10px; color: rgb(147, 9, 160);" name="person-circle-outline"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-header>
+  <ion-toolbar class="menu-header" color="tertiary">
+    <strong>MENU</strong>
+    <div class="rapidito"> R A P I D I T O </div>
+    <!-- Botón de menú -->
+    <ion-buttons slot="start">
+      <ion-menu-button> <ion-icon name="home-outline"></ion-icon></ion-menu-button>
+    </ion-buttons>
+    <!-- Botón de salida en el lado derecho -->
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Salir</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="main-content">
+  <!-- Contenido principal -->
+  <!-- Ubicación actual -->
+  <ion-card *ngIf="latitude !== null && longitude !== null">
+    <ion-card-header>
+      <ion-card-title>Ubicación Actual</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Latitud: {{ latitude }}</p>
+      <p>Longitud: {{ longitude }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Mapa -->
+  <ion-card>
+    <ion-card-content>
+      <div id="map" style="height: 300px;"></div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

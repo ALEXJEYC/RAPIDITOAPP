@@ -1,0 +1,69 @@
+<ion-header class="ion-no-border custom-header">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="light"></ion-back-button>
+    </ion-buttons>
+    
+  
+<strong>REGISTRO</strong>
+    <div class="rapidito"> R A P I D I T O </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="d-flex-center">
+  <ion-card class="content-card">
+    <ion-card-content class="centered-content">
+      <div class="ion-text-center">
+        <div class="image-container">
+          <img src="assets/img/iconoP.jpg" alt="Logo de la aplicación" class="logo-image">
+        </div>
+        <ion-text>
+          <h1><strong>RAPIDITO</strong>app</h1>
+        </ion-text>
+      </div>
+    </ion-card-content>
+
+    <ion-item class="custom-input" lines="none">
+      <ion-icon name="mail-outline" slot="start"></ion-icon>
+      <ion-input type="text" placeholder="Email" [(ngModel)]="email" required></ion-input>
+    </ion-item>
+    
+    <ion-item class="custom-input" lines="none">
+      <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+      <ion-input type="password" placeholder="Contraseña" [(ngModel)]="contrasena" required></ion-input>
+    </ion-item>
+    
+
+    <ion-list>
+      <ion-item>
+        <ion-select (ionChange)="cargarComuna()" placeholder="Seleccione región" [(ngModel)]="regionSeleccionado">
+          <ion-select-option [value]="i.id" *ngFor="let i of regiones">{{i.nombre}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item>
+        <ion-select placeholder="Seleccione comuna" [(ngModel)]="comunaSeleccionada">
+          <ion-select-option [value]="i.id" *ngFor="let i of comunas">{{i.nombre}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="registrarse()" color="tertiary" expand="block">Registrarse  <ion-icon name="person-add-outline"></ion-icon>  </ion-button>
+        <ion-button color="tertiary" routerLink="/vehiculo" expand="block" fill="outline">
+          Registrarme con vehiculo  <ion-icon name="car-outline"></ion-icon>
+        </ion-button>
+
+      </ion-col>
+    </ion-row>
+
+    <!-- Muestra el mensaje de error aquí, fuera de la fila de registro -->
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+    
+  </ion-card>
+</ion-content>

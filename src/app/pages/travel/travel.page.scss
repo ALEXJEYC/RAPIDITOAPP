@@ -1,0 +1,44 @@
+ion-header {
+  ion-toolbar {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+  }
+  
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar horizontalmente */
+    margin-left: 20px; /* Espacio a la izquierda del ícono de retroceso */
+  }
+
+  strong {
+    font-size: 24px;
+    margin-bottom: 5px; /* Espacio entre "VIAJES" y "RAPIDITO" */
+  }
+
+  .rapidito {
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+.viajes-content {
+  --ion-background-color: linear-gradient(to bottom, rgb(9, 39, 160), rgb(52, 30, 130)); /* Fondo degradado */
+  color: white; /* Color del texto */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar horizontalmente */
+}
+
+.viajes-card {
+  margin: 20px auto; /* Centrar la tarjeta */
+  max-width: 80%; /* Ancho máximo de la tarjeta */
+  background-color: rgb(73, 71, 183); /* Fondo morado de la tarjeta */
+  color: white !important; /* Color del texto en la tarjeta */
+}
+ion-card ion-item {
+    --color: white !important; /* Color del texto */
+    text-align: center; /* Centrar texto */
+    margin-top: 15px; /* Espaciado superior */
+  }

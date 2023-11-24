@@ -1,0 +1,50 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+#map { height: 600px; }
+
+
+ion-toolbar.menu-header {
+    text-align: center;
+  }
+  
+.menu-header strong {
+    font-size: 24px;
+}
+  
+.menu-header .rapidito {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+#main-content {
+  --ion-background-color: linear-gradient(to bottom, rgb(9, 39, 160), rgb(52, 30, 130)); /* Fondo degradado de la página */
+}
+
+ion-content {
+  --ion-background-color: linear-gradient(to bottom, rgb(9, 39, 160), rgb(52, 30, 130)); /* Fondo degradado de la página */
+  margin-top: 0; /* Elimina el margen superior */
+  color: white;
+}
+
+
+ion-card {
+  margin: 20px auto; /* Centrar la tarjeta de ubicación actual */
+  max-width: 80%; /* Ancho máximo de la tarjeta */
+  background-color: rgb(2, 0, 128); /* Fondo morado de la tarjeta */
+}
+ion-card-content p {
+  font-size: 20px; /* Tamaño de fuente más grande */
+  color: white !important; /* Color del texto */
+  margin-bottom: 10px; /* Espacio entre párrafos */
+}
+ion-card-title, ion-card-content {
+  color: white !important; /* Color del texto */
+  text-align: center; /* Centrar el contenido */
+}
+ion-menu {
+  --ion-background-color: var(--ion-color-tertiary); /* Color de fondo */
+  --ion-text-color: white; /* Color del texto */
+}

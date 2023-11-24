@@ -1,0 +1,35 @@
+<ion-header class="ion-no-border custom-header">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="light"></ion-back-button>
+    </ion-buttons>
+    
+    <div class="header-content">
+      <strong>HISTORIAL</strong>
+      <div class="rapidito"> R A P I D I T O </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="history-content">
+
+  <!-- Tarjeta cuando no hay historial -->
+  <ng-container *ngIf="!loading">
+    <ion-card class="history-card">
+      <ion-card-content class="ion-text-center">
+        <img src="/assets/img/iconoA.png" alt="Imagen de historial" class="history-image">
+        <p>No se encuentran viajes previos registrados.</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+
+  <!-- Skeleton cuando está cargando -->
+  <ng-container *ngIf="loading">
+    <ion-card class="skeleton-card">
+      <ion-card-content>
+        <ion-skeleton-text animated style="height: 150px; width: 100%;"></ion-skeleton-text>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "RAPIDITO",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

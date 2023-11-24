@@ -1,0 +1,66 @@
+ion-header {
+  ion-toolbar {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+  }
+  
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar horizontalmente */
+    margin-left: 20px; /* Espacio a la izquierda del ícono de retroceso */
+  }
+
+  strong {
+    font-size: 24px;
+    margin-bottom: 5px; /* Espacio entre "Perfil" y "RAPIDITO" */
+  }
+
+  .rapidito {
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+#main-content {
+  --ion-background-color: linear-gradient(to bottom, rgb(9, 39, 160), rgb(52, 30, 130)); /* Fondo degradado de la página */
+}
+
+ion-content {
+  --ion-background-color: linear-gradient(to bottom, rgb(9, 39, 160), rgb(52, 30, 130)); /* Fondo degradado de la página */
+  margin-top: 0; /* Elimina el margen superior */
+  color: white;
+}
+
+ion-card {
+  margin: 20px auto; /* Centrar la tarjeta de ubicación actual */
+  max-width: 80%; /* Ancho máximo de la tarjeta */
+  background-color: rgb(73, 71, 183); /* Fondo morado de la tarjeta */
+  background-image: linear-gradient(to bottom, rgb(73, 71, 183), rgb(0, 90, 240)); /* Fondo degradado hacia azul */
+  border-radius: 15px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  text-align: center; /* Centrar contenido */
+}
+
+ion-card ion-item {
+  --color: white !important; /* Color del texto */
+  text-align: center; /* Centrar texto */
+  margin-top: 15px; /* Espaciado superior */
+}
+
+ion-card ion-avatar {
+  width: 100px; /* Ancho del avatar */
+  height: 100px; /* Altura del avatar */
+  margin: 0 auto 20px; /* Centrar y agregar espacio inferior */
+}
+ion-card .avatar {
+    display: block;
+    margin: 20px auto 0; /* Espacio arriba, centrado horizontalmente */
+  }
+  
+  ion-card .email {
+    --color: white !important; /* Color del texto */
+    text-align: center; /* Centrar texto */
+    margin-top: 10px; /* Espacio arriba */
+  }

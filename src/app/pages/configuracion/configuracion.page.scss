@@ -1,0 +1,44 @@
+ion-header {
+    ion-toolbar {
+      display: flex;
+      justify-content: center; /* Centrar horizontalmente */
+      align-items: center; /* Centrar verticalmente */
+    }
+    
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centrar horizontalmente */
+      margin-left: 20px; /* Espacio a la izquierda del ícono de retroceso */
+    }
+  
+    strong {
+      font-size: 24px;
+      margin-bottom: 5px; /* Espacio entre "Perfil" y "RAPIDITO" */
+    }
+  
+    .rapidito {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+ion-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ion-card {
+    width: 80%; /* Ajusta el ancho de las tarjetas según tus necesidades */
+    margin-bottom: 20px; /* Espacio entre tarjetas */
+  }
+}
+#main-content {
+  --ion-background-color: linear-gradient(to bottom, rgb(9, 39, 160), rgb(52, 30, 130)); /* Fondo degradado de la página */
+}
+
+ion-content {
+  --ion-background-color: linear-gradient(to bottom, rgb(9, 39, 160), rgb(52, 30, 130)); /* Fondo degradado de la página */
+  margin-top: 0; /* Elimina el margen superior */
+  color: white;
+}

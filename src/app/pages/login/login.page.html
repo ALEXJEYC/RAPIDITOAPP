@@ -1,0 +1,55 @@
+<ion-header class="ion-no-border custom-header">
+  <ion-toolbar color="tertiary">
+    <strong>INGRESAR</strong>
+    <div class="rapidito"> R A P I D I T O </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="d-flex-center">
+  <div class="content-container">
+    <ion-card class="content-card">
+      <ion-card-content class="centered-content">
+        <div class="ion-text-center">
+          <div class="image-container">
+            <img src="assets/img/iconoP.jpg" alt="Logo de la aplicación" class="logo-image">
+          </div>
+          <ion-text>
+            <h1><strong>RAPIDITO</strong>app</h1>
+          </ion-text>
+        </div>
+      </ion-card-content>
+
+      <ion-item class="custom-input" lines="none">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <ion-input type="text" placeholder="Email" [(ngModel)]="email" required></ion-input>
+      </ion-item>
+      
+      <ion-item class="custom-input" lines="none">
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-input type="password" placeholder="Contraseña" [(ngModel)]="contrasena" required></ion-input>
+      </ion-item>
+      
+      <ion-row>
+        <ion-col>
+          <ion-button color="tertiary" (click)="login()" expand="block" [disabled]="!email || !contrasena">
+            Ingresar  <ion-icon name="log-in-outline"></ion-icon> 
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-button color="tertiary" routerLink="/registrarse" expand="block" fill="outline">
+            Registrarse  <ion-icon name="person-add-outline"></ion-icon> 
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="auto">
+          <ion-button routerLink="/password" color="tertiary" (click)="forgotPassword()" fill="clear">
+            ¿Has olvidado tu contraseña?
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+</ion-content>
