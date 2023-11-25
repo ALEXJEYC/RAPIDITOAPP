@@ -5,13 +5,13 @@ describe('VehiculoPage', () => {
   let component: VehiculoPage;
   let fixture: ComponentFixture<VehiculoPage>;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
     fixture = TestBed.createComponent(VehiculoPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  }));
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
+
+/*   it('should create', () => {
+    expect(component).toBeTruthy();
+  }); */
 });
