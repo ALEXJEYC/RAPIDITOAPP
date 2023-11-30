@@ -11,6 +11,7 @@ import { Device } from '@capacitor/device';
 import { Capacitor } from '@capacitor/core';
 import { Toast } from '@capacitor/toast';
 import { ActivatedRoute } from '@angular/router';
+import { StorageService, Usuario } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-menu',
@@ -22,6 +23,7 @@ export class MenuPage implements OnInit, AfterViewInit {
   longitude: number | null = null;
   map: L.Map;
   userEmail: string | null = null;
+  email: string = "";
 
   constructor(
     private router: Router,
@@ -29,7 +31,8 @@ export class MenuPage implements OnInit, AfterViewInit {
     private navCtrl: NavController,
     private helper:HelperService,
     private animationCtrl: AnimationController,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private storage: StorageService,
   ) {}
   async dispositivo(){
     const device = await   Device.getInfo();
@@ -38,6 +41,7 @@ export class MenuPage implements OnInit, AfterViewInit {
   }
   
   async goToProfile() {
+    this.storage.userCorreo = this.email;
     const animation = this.animationCtrl.create()
       .addElement(document.querySelector('.ion-page')); // Elemento principal de la página
   
@@ -47,7 +51,7 @@ export class MenuPage implements OnInit, AfterViewInit {
   
     await animation.play(); // Ejecutar la animación antes de la navegación
   
-    this.navCtrl.navigateForward('/perfil');
+    await this.router.navigateByUrl(`/perfil/${this.email}`);
   }
   
   async goToSettings() {
@@ -60,7 +64,7 @@ export class MenuPage implements OnInit, AfterViewInit {
   
     await animation.play(); // Ejecutar la animación antes de la navegación
   
-    this.navCtrl.navigateForward('/configuracion');
+    await this.router.navigateByUrl(`/configuracion/${this.email}`);
   }
   async goToTravel() {
     const animation = this.animationCtrl.create()
@@ -72,7 +76,7 @@ export class MenuPage implements OnInit, AfterViewInit {
   
     await animation.play(); // Ejecutar la animación antes de la navegación
   
-    this.navCtrl.navigateForward('/viajar');
+    await this.router.navigateByUrl(`/viajar/${this.email}`);
   }
 
   async goToHistory() {
@@ -85,7 +89,7 @@ export class MenuPage implements OnInit, AfterViewInit {
   
     await animation.play(); // Ejecutar la animación antes de la navegación
   
-    this.navCtrl.navigateForward('/historial-viajes');
+    await this.router.navigateByUrl(`/historial-viajes/${this.email}`);
   }
 
 

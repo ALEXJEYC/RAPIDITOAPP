@@ -3,15 +3,19 @@ import { ElementRef, ViewChildren, ViewChild } from '@angular/core';
 import type { QueryList } from '@angular/core';
 import type { Animation } from '@ionic/angular';
 import { AnimationController, IonCard } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-configuracion',
   templateUrl: './configuracion.page.html',
   styleUrls: ['./configuracion.page.scss'],
 })
 export class ConfiguracionPage implements OnInit {
+  userEmail: string | null = null;
   @ViewChildren(IonCard, { read: ElementRef }) cardElements: QueryList<ElementRef<HTMLIonCardElement>>;
   private animation: Animation;
-  constructor(private animationCtrl: AnimationController) { }
+  constructor(
+    private animationCtrl: AnimationController,
+    private route: ActivatedRoute,) { }
   ngAfterViewInit() {
     const cardA = this.animationCtrl
       .create()
@@ -60,6 +64,10 @@ export class ConfiguracionPage implements OnInit {
     this.animation.stop();
   }
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.userEmail = params['correo'];
+      console.log('Correo del usuario:', this.userEmail);
+    });
   }
 
 }

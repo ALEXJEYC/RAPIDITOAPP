@@ -13,26 +13,52 @@
 
 <ion-content class="d-flex-center">
   <ion-card *ngIf="usuario">
-    <ion-avatar class="avatar">
-      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    <ion-avatar class="avatar" (click)="abrirCamara()">
+      <img [src]="imagenAvatar" alt="Avatar de usuario" />
     </ion-avatar>
     <ion-item class="email">
+      <ion-icon name="mail-outline" ></ion-icon>
       <ion-label>{{ usuario.email }}</ion-label>
     </ion-item>
-    <ion-item *ngIf="vehiculo">
-      <ion-label>Modelo: {{ vehiculo.modeloVehiculo }}</ion-label>
+    <ion-item>
+      <ion-icon name="person-outline" ></ion-icon>
+      <ion-label>{{ usuario.primerNombre }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="person-outline" ></ion-icon>
+      <ion-label>{{ usuario.segundoNombre }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="people-outline" ></ion-icon>
+      <ion-label>{{ usuario.apellidos }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="calendar-outline" ></ion-icon>
+      <ion-label>{{ usuario.fechaNacimiento }}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="transgender-outline" ></ion-icon>
+      <ion-label> {{ usuario.sexo }}</ion-label>
     </ion-item>
     <ion-item *ngIf="vehiculo">
-      <ion-label>Patente: {{ vehiculo.patente }}</ion-label>
+      <ion-icon name="pricetags-outline" ></ion-icon>
+      <ion-label>{{ vehiculo.modeloVehiculo }}</ion-label>
     </ion-item>
     <ion-item *ngIf="vehiculo">
-      <ion-label>Año: {{ vehiculo.anio }}</ion-label>
+      <ion-icon name="clipboard-outline" ></ion-icon>
+      <ion-label>{{ vehiculo.patente }}</ion-label>
     </ion-item>
     <ion-item *ngIf="vehiculo">
-      <ion-label>Color: {{ vehiculo.color }}</ion-label>
+      <ion-icon name="reader-outline"  ></ion-icon>
+      <ion-label>{{ vehiculo.anio }}</ion-label>
     </ion-item>
     <ion-item *ngIf="vehiculo">
-      <ion-label>Marca: {{ vehiculo.marca }}</ion-label>
+      <ion-icon name="color-palette-outline" ></ion-icon>
+      <ion-label>{{ vehiculo.color }}</ion-label>
+    </ion-item>
+    <ion-item *ngIf="vehiculo">
+      <ion-icon name="car-sport-outline" ></ion-icon>
+      <ion-label>{{ vehiculo.marca }}</ion-label>
     </ion-item>
   </ion-card>
 

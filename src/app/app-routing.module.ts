@@ -25,19 +25,23 @@ const routes: Routes = [
     loadChildren: () => import('./pages/menu/menu.module').then(m => m.MenuPageModule)
   },
   {
-    path: 'perfil',
+    path: 'perfil/:correo',
+    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin },
     loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
   },
   {
-    path: 'configuracion',
+    path: 'configuracion/:correo',
+    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin },
     loadChildren: () => import('./pages/configuracion/configuracion.module').then( m => m.ConfiguracionPageModule)
   },
   {
-    path: 'viajar',
+    path: 'viajar/:correo',
+    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin },
     loadChildren: () => import('./pages/travel/travel.module').then( m => m.TravelPageModule)
   },
   {
-    path: 'historial-viajes',
+    path: 'historial-viajes/:correo',
+    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: redirectUnauthorizedToLogin },
     loadChildren: () => import('./pages/history/history.module').then( m => m.HistoryPageModule)
   },
   {

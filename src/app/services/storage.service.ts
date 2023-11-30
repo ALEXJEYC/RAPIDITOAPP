@@ -4,8 +4,14 @@ import { Preferences } from '@capacitor/preferences';
 export interface Usuario {
   email: string;
   contrasena: string;
+  primerNombre?: string;
+  segundoNombre?: string;
+  apellidos?: string;
+  fechaNacimiento?: string; 
+  sexo?: string;
   vehiculo?: Vehiculo;
 }
+
 
 export interface StorageData {
   usuarios: Usuario[];

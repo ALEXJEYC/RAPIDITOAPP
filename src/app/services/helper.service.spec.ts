@@ -13,7 +13,7 @@ describe('HelperService', () => {
     service = TestBed.inject(HelperService);
   });
 
-  /* it('should be created', () => {
+   it('should be created', () => {
     expect(service).toBeTruthy();
-  }); */
+  }); 
 });

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService, Vehiculo } from 'src/app/services/storage.service';
 import { HelperService } from 'src/app/services/helper.service';
+import { ActivatedRoute } from '@angular/router';
 import { ModalController } from '@ionic/angular'; // Asegúrate de importar el ModalController si lo estás utilizando para las ventanas emergentes
 
 @Component({
@@ -9,16 +10,22 @@ import { ModalController } from '@ionic/angular'; // Asegúrate de importar el M
   styleUrls: ['./travel.page.scss'],
 })
 export class TravelPage implements OnInit {
+  userEmail: string | null = null;
   vehiculos: Vehiculo[] = [];
 
   constructor(
     private storageService: StorageService,
     private helperService: HelperService,
+    private route: ActivatedRoute,
     private modalController: ModalController // Asegúrate de tener el ModalController en los imports si lo utilizas para las ventanas emergentes
   ) {}
 
   ngOnInit() {
     this.cargarVehiculos();
+    this.route.params.subscribe(params => {
+      this.userEmail = params['correo'];
+      console.log('Correo del usuario:', this.userEmail);
+    });
   }
 
   async cargarVehiculos() {

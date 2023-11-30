@@ -16,6 +16,11 @@ import { StorageService, Usuario, Vehiculo } from 'src/app/services/storage.serv
 export class VehiculoPage implements OnInit {
   email: string = '';
   contrasena: string = '';
+  primerNombre: string = '';
+  segundoNombre: string = '';
+  apellidos: string = '';
+  fechaNacimiento: string = '';
+  sexo: string = '';
   errorMessage: string = '';
   marcaVehiculo: string = '';
   patenteVehiculo: string = '';
@@ -77,13 +82,18 @@ export class VehiculoPage implements OnInit {
   }
 
 async registrarseConVehiculo(): Promise<void> {
-  if (!this.email || !this.contrasena || !this.marcaVehiculo || !this.patenteVehiculo || !this.modeloVehiculo || !this.anioVehiculo ) {
+  if (!this.email || !this.contrasena || !this.primerNombre || !this.apellidos || !this.marcaVehiculo || !this.patenteVehiculo || !this.modeloVehiculo || !this.anioVehiculo ) {
     this.helper.showAlert('Por favor, complete todos los campos', 'Error');
     return;
   }
   const usuario: Usuario = {
     email: this.email,
     contrasena: this.contrasena,
+    primerNombre: this.primerNombre,
+    segundoNombre: this.segundoNombre,
+    apellidos: this.apellidos,
+    fechaNacimiento: this.fechaNacimiento,
+    sexo: this.sexo,
     vehiculo: {
       marca: this.marcaVehiculo,
       patente: this.patenteVehiculo,

@@ -16,6 +16,11 @@ import { AlertController } from '@ionic/angular';
 export class RegistrarsePage implements OnInit {
   email: string = '';
   contrasena: string = '';
+  primerNombre: string = '';
+  segundoNombre: string = '';
+  apellidos: string = '';
+  fechaNacimiento: string = '';
+  sexo: string = '';
   errorMessage: string = '';
 
   regiones: Region[] = [];
@@ -74,7 +79,7 @@ export class RegistrarsePage implements OnInit {
   }
 
   async registrarse() {
-    if (!this.email || !this.contrasena ) {
+    if (!this.email || !this.contrasena || !this.primerNombre || !this.apellidos) {
       this.helper.showAlert('Por favor, complete todos los campos', 'Error');
       return;
     }
@@ -90,6 +95,11 @@ export class RegistrarsePage implements OnInit {
         const user = {
           email: this.email,
           contrasena: this.contrasena,
+          primerNombre: this.primerNombre,
+          segundoNombre: this.segundoNombre,
+          apellidos: this.apellidos,
+          fechaNacimiento: this.fechaNacimiento,
+          sexo: this.sexo,
         };
         await this.storageService.agregarUsuario(user);
 

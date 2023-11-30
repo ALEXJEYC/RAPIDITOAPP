@@ -32,8 +32,55 @@
       <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
       <ion-input type="password" placeholder="Contraseña" [(ngModel)]="contrasena" required></ion-input>
     </ion-item>
+    <ion-item class="custom-input" lines="none">
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-input type="text" placeholder="Primer Nombre" [(ngModel)]="primerNombre" required></ion-input>
+    </ion-item>
     
+    <ion-item class="custom-input" lines="none">
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-input type="text" placeholder="Segundo Nombre" [(ngModel)]="segundoNombre"></ion-input>
+    </ion-item>
+    
+    <ion-item class="custom-input" lines="none">
+      <ion-icon name="people-outline" slot="start"></ion-icon>
+      <ion-input type="text" placeholder="Apellidos" [(ngModel)]="apellidos" required></ion-input>
+    </ion-item>
+    
+    <ion-item class="custom-input" lines="none">
+      <ion-icon name="calendar-outline" slot="start"></ion-icon>
+      <ion-input type="date" placeholder="Fecha de Nacimiento" [(ngModel)]="fechaNacimiento"></ion-input>
+    </ion-item>
+    
+    <ion-item class="custom-input" lines="none">
+      <ion-icon name="transgender-outline" slot="start"></ion-icon>
+      <ion-input type="text" placeholder="Sexo" [(ngModel)]="sexo"></ion-input>
+    </ion-item>
 
+    <ion-item class="custom-input" lines="none">
+      <ion-icon name="car-sport-outline" slot="start"></ion-icon>
+      <ion-input type="text" placeholder="Marca del vehículo" [(ngModel)]="marcaVehiculo" required></ion-input>
+    </ion-item>
+
+    <ion-item class="custom-input" lines="none">
+      <ion-icon name="clipboard-outline" slot="start"></ion-icon>
+      <ion-input type="text" placeholder="Patente" [(ngModel)]="patenteVehiculo" required></ion-input>
+    </ion-item>
+
+    <ion-item class="custom-input" lines="none">
+      <ion-icon name="pricetags-outline" slot="start"></ion-icon>
+      <ion-input type="text" placeholder="Modelo" [(ngModel)]="modeloVehiculo" required></ion-input>
+    </ion-item>
+
+    <ion-item class="custom-input" lines="none">
+      <ion-icon name="reader-outline" slot="start" ></ion-icon>
+      <ion-input type="number" placeholder="Año" [(ngModel)]="anioVehiculo" required></ion-input>
+    </ion-item>
+
+    <ion-item class="custom-input" lines="none">
+      <ion-icon name="color-palette-outline" slot="start"></ion-icon>
+      <ion-input type="text" placeholder="Color" [(ngModel)]="colorVehiculo" required></ion-input>
+    </ion-item>
     <ion-list>
       <ion-item>
         <ion-select (ionChange)="cargarComuna()" placeholder="Seleccione región" [(ngModel)]="regionSeleccionado">
@@ -49,26 +96,6 @@
         </ion-select>
       </ion-item>
     </ion-list>
-
-    <ion-item class="custom-input" lines="none">
-      <ion-input type="text" placeholder="Marca del vehículo" [(ngModel)]="marcaVehiculo" required></ion-input>
-    </ion-item>
-
-    <ion-item class="custom-input" lines="none">
-      <ion-input type="text" placeholder="Patente" [(ngModel)]="patenteVehiculo" required></ion-input>
-    </ion-item>
-
-    <ion-item class="custom-input" lines="none">
-      <ion-input type="text" placeholder="Modelo" [(ngModel)]="modeloVehiculo" required></ion-input>
-    </ion-item>
-
-    <ion-item class="custom-input" lines="none">
-      <ion-input type="number" placeholder="Año" [(ngModel)]="anioVehiculo" required></ion-input>
-    </ion-item>
-
-    <ion-item class="custom-input" lines="none">
-      <ion-input type="text" placeholder="Color" [(ngModel)]="colorVehiculo" required></ion-input>
-    </ion-item>
     
 
     <ion-row>
